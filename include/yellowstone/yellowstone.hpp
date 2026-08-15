@@ -7,4 +7,5 @@
 #include "yellowstone/event.hpp"
 #include "yellowstone/event_bus.hpp"
 #include "yellowstone/partition.hpp"
+#include "yellowstone/scheduler.hpp"
 #include "yellowstone/worker.hpp"

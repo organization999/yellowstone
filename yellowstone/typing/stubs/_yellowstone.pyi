@@ -75,3 +75,54 @@ class EventBus(Generic[PayloadT]):
     def payload_type(self) -> type[PayloadT]: ...
 
     def pending(self, subscriber_id: int) -> int: ...
+
+
+class Scheduler(Generic[PayloadT]):
+    """Schedule typed EventBus payloads for future wall-clock publication."""
+
+    def __init__(
+        self,
+        event_bus: EventBus[PayloadT],
+        *,
+        retry_delay_ns: int = 1_000_000,
+    ) -> None: ...
+
+    def schedule(
+        self,
+        event_id: int,
+        payload: PayloadT,
+        forward_at_unix_nanoseconds: int,
+        *,
+        superstep: int = 0,
+    ) -> int: ...
+
+    def schedule_one(
+        self,
+        subscriber_id: int,
+        event_id: int,
+        payload: PayloadT,
+        forward_at_unix_nanoseconds: int,
+        *,
+        superstep: int = 0,
+    ) -> int: ...
+
+    def start(self) -> None: ...
+    def stop(self) -> None: ...
+
+    @property
+    def running(self) -> bool: ...
+
+    @property
+    def pending_events(self) -> int: ...
+
+    @property
+    def scheduled_events(self) -> int: ...
+
+    @property
+    def forwarded_events(self) -> int: ...
+
+    @property
+    def failed_events(self) -> int: ...
+
+    @property
+    def retry_delay_ns(self) -> int: ...

@@ -5,4 +5,5 @@ from .typing.stubs._yellowstone import (
     EventBus as EventBus,
     MAX_SUBSCRIBERS as MAX_SUBSCRIBERS,
     PublishResult as PublishResult,
+    Scheduler as Scheduler,
 )
