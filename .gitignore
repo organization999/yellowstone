@@ -9,14 +9,11 @@
 *.pyd
 *.so
 
-.vscode/
-
 __pycache__/
-
-env/
+*.egg-info/
 build/
 dist/
-*.egg-info/
+env/
 
 bin/*
 !/bin/.keep

@@ -4,11 +4,14 @@ include pyproject.toml
 include setup.py
 
 recursive-include buildsystem *.py
+recursive-include docs *.md
 recursive-include examples *.py
 recursive-include include *.hpp *.inl
 recursive-include source *.cc
-recursive-include yellowstone *.py *.pyi py.typed
 recursive-include tests *.cc *.hpp *.py
+recursive-include yellowstone *.py *.pyi py.typed
+recursive-include vendor/phelps/include *.hpp *.inl
+include vendor/phelps/source/manager.cc
 
 global-exclude *.py[cod]
 global-exclude __pycache__
