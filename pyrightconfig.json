@@ -1,0 +1,18 @@
+{
+  "venvPath": ".",
+  "venv": "env",
+  "stubPath": "yellowstone/typing/stubs",
+  "include": [
+    "yellowstone",
+    "tests",
+  ],
+  "executionEnvironments": [
+  ],
+  "exclude": [
+    "**/.*",
+    "**/.*/",
+    "**/.git",
+    "**/__pycache__",
+    "env"
+  ]
+}

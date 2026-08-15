@@ -1,0 +1,17 @@
+include LICENSE
+include README.md
+include pyproject.toml
+include setup.py
+
+recursive-include buildsystem *.py
+recursive-include examples *.py
+recursive-include include *.hpp *.inl
+recursive-include source *.cc
+recursive-include yellowstone *.py *.pyi py.typed
+recursive-include tests *.cc *.hpp *.py
+
+global-exclude *.py[cod]
+global-exclude __pycache__
+global-exclude *.pyd
+global-exclude *.so
+global-exclude *.dll
